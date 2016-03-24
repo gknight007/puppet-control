@@ -6,9 +6,6 @@ class profiles::base {
     servers => ['time.nist.gov', 'pool.ntp.org'],
   }
 
-  class { '::r10k':
-    remote => hiera('r10k::remote'),
-  }
 
   class { 'hiera':
     hierarchy => [
