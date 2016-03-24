@@ -13,12 +13,14 @@ class profiles::compile_master(
 
   file { '/etc/puppetlabs/puppetserver/conf.d/webserver.conf':
     require => Package['puppetserver'],
+    notify  => Service['puppet-server'],
     content => template('profiles/puppetserver-webserver.conf.erb'),
   }
 
   file { '/etc/puppetlabs/puppetserver/bootstrap.cfg':
     require => Package['puppetserver'],
-    source => 'puppet:///modules/profiles/ca-disabled-puppetserver-bootstrap.cfg',
+    notify  => Service['puppet-server'],
+    source  => 'puppet:///modules/profiles/ca-disabled-puppetserver-bootstrap.cfg',
   }
 
   service { 'puppet':
@@ -27,8 +29,12 @@ class profiles::compile_master(
 
   cron { 'r10k-deploy':
     command => 'r10k deploy environment -pv',
-    user => 'root',
-    minute => '*/10',
+    user    => 'root',
+    minute  => '*/10',
+  }
+
+  service { 'puppet-server':
+    ensure => running,
   }
 
 }
