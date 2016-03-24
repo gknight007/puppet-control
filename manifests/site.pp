@@ -1,8 +1,6 @@
 
 
-$role_path = get_module_path("roles::${role}")
-
-notify { "Role path = ${role_path}": }
+notify { "Role => roles::${::role}": }
 
 if $role_path != '' {
   class { "roles::${::role}": }
