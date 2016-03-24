@@ -18,7 +18,7 @@ class profiles::compile_master(
 
   file { '/etc/puppetlabs/puppetserver/bootstrap.cfg':
     require => Package['puppetserver'],
-    source => 'puppet:///profiles/ca-disabled-puppetserver-bootstrap.cfg',
+    source => 'puppet:///modules/profiles/ca-disabled-puppetserver-bootstrap.cfg',
   }
 
   service { 'puppet':
