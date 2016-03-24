@@ -1,6 +1,6 @@
 
 
-class profiles::complie_master(
+class profiles::compile_master(
 ){
   class { 'r10k':
     remote => 'https://github.com/gknight007/puppet-control.git',
