@@ -9,9 +9,10 @@ class profiles::puppet_master_of_master(
     ensure => latest,
   }
 
-  service { 'puppet':
+  service { ['puppet', 'puppetserver']:
     ensure => running,
   }
+
 
   cron { 'r10k-deploy':
     command => 'r10k deploy environment -pv',
