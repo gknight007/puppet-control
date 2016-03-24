@@ -1,9 +1,10 @@
 
 
-notify { "Role => roles::${::role}": }
 
-if $role_path != '' {
+if $::role and $::role != ''  {
+  notify { "Role => roles::${::role}": }
   class { "roles::${::role}": }
 }
 
 include roles::base
+
