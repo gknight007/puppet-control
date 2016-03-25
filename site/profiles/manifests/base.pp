@@ -21,5 +21,8 @@ class profiles::base {
     group          => 'root',
   }
 
+  file { '/tmp/puppet-master-test-proof':
+    content => 'This file is to show the puppet master applied the base manifest',
+  }
 
 }
