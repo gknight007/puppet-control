@@ -13,6 +13,8 @@ mod 'puppetlabs/java', '1.4.3'
 mod 'puppetlabs/mysql', '3.6.2'
 mod 'puppetlabs/mongodb', '0.11.0'
 mod 'puppetlabs/git', '0.4.0'
+mod 'puppetlabs/apache'
+
 mod 'zack/r10k'
 mod 'ajcrowe/supervisord', '0.6.0'
 mod 'stankevich/python', '1.10.0'
