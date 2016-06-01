@@ -18,3 +18,8 @@ mod 'ajcrowe/supervisord', '0.6.0'
 mod 'stankevich/python', '1.10.0'
 mod 'saz/rsyslog', '3.5.1'
 mod 'hunner/hiera', '1.4.0'
+
+
+mod 'panopuppet',
+  :git => 'https://github.com/gknight007/puppet-panopuppet',
+  :ref => 'master'
