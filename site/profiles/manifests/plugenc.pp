@@ -41,4 +41,8 @@ class profiles::plugenc (
     require => File[$encWwwDir],
   }
 
+  file { '/etc/plug-enc.cfg.yaml':
+    source => 'puppet:///profiles/plug_enc_cfg.yaml',
+  }
+
 }
