@@ -21,7 +21,7 @@ class profiles::plugenc (
     port => 80,
     docroot => $encWwwDir,
     custom_fragment => "PassengerAppRoot ${encWwwDir}",
-    options => ['-Multiview'],
+    options => ['-Multiviews'],
     override => ['all'],
   }
 
