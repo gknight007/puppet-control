@@ -2,7 +2,6 @@
 class profiles::puppet_master_of_master(
 ){
 
-  include panopuppet
   class { 'r10k':
     remote => 'https://github.com/gknight007/puppet-control.git',
   }
