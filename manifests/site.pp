@@ -1,9 +1,7 @@
 
-
-$role_path = get_module_path("roles::${role}")
-
-notify { "Role path = ${role_path}": }
-
-if $role_path != '' {
+if $::role and $::role != ''  {
+  notify { "Role => roles::${::role}": }
   class { "roles::${::role}": }
 }
+
+include roles::base
