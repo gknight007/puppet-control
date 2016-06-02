@@ -42,7 +42,7 @@ class profiles::plugenc (
   }
 
   file { '/etc/plug-enc.cfg.yaml':
-    source => 'puppet:///profiles/plug_enc_cfg.yaml',
+    content => template('profiles/plug_enc_cfg.yaml.erb'),
   }
 
 }
