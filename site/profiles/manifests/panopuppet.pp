@@ -22,6 +22,7 @@ $wsgi_thread_count = 5
 
       wsgi_daemon_process_options => {
         threads => $wsgi_thread_count,
+        python-path => '/usr/lib/python3.4/site-packages',
       },
 
       aliases => [{
