@@ -10,4 +10,8 @@ class profiles::panopuppet {
     puppetdb_url => $puppetdb_url,
   }
 
+  class { 'apache':
+    default_vhost => false,
+  }
+
 }
