@@ -10,11 +10,11 @@ $wsgi_thread_count = 5
 #include panopuppet
   include panopuppet
 
-  class { 'apache':
-    default_vhost => false,
-  } ->
+  #class { 'apache':
+  #  default_vhost => false,
+  #} ->
 
-  apache::vhost { 'panopuppet':
+  apache::vhost { 'default':
       docroot             => $static_root,
       port                => 80,
       wsgi_script_aliases => { '/' => "${wsgi_dir}/wsgi.py" },
