@@ -33,6 +33,7 @@ $wsgi_thread_count = 5
         'path'    => $static_root,
         'require' => 'all granted',
       }],
+    require => Class['apache'],
   }
 
 
